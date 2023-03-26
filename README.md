@@ -1,7 +1,7 @@
 # carbon-footprint
 Python and Flask app to calculate individual carbon footprint on Docker
 
-###Clone repo 
+Clone repo 
 git clone <https://repo> 
 
 ###Navigate into root directory
