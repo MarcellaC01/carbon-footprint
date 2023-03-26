@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Carbon Footprint Calculator - Home
+{% endblock %}
+
+{% block content %}
+  <h1>Carbon Footprint Calculator</h1>
+  <form method="POST" action="/results">
+    <div>
+      <label for="miles_driven">Miles Driven:</label>
+      <input type="number" name="miles_driven" id="miles_driven" required>
+    </div>
+    <div>
+      <label for="mpg">Miles Per Gallon:</label>
+      <input type="number" name="mpg" id="mpg" required>
+    </div>
+    <div>
+      <label for="electricity_usage">Electricity Usage (kWh):</label>
+      <input type="number" name="electricity_usage" id="electricity_usage" required>
+    </div>
+    <div>
+      <label for="gas_bill">Gas Bill ($):</label>
+      <input type="number" name="gas_bill" id="gas_bill" required>
+    </div>
+    <button type="submit">Calculate</button>
+  </form>
+{% endblock %}

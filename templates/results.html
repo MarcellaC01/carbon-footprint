@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Carbon Footprint Calculator - Results
+{% endblock %}
+
+{% block content %}
+  <h1>Results</h1>
+  <p>Your carbon footprint for the past month is: {{ carbon_footprint }} metric tons</p>
+  <div id="carbon_footprint_chart"></div>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    var data = [
+      {
+        x: {{ dates|tojson }},
+        y: {{ carbon_footprints|tojson }},
+        type: 'scatter'
+      }
+    ];
+
+    var layout = {
+      title: 'Carbon Footprint over Time',
+      xaxis: {
+        title: 'Date'
+      },
+      yaxis: {
+        title: 'Carbon Footprint (metric tons)'
+      }
+    };
+
+    Plotly.newPlot('carbon_footprint_chart', data, layout);
+  </script>
+{% endblock %}
