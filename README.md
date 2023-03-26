@@ -27,7 +27,7 @@ Python and Flask app to calculate individual carbon footprint on Docker
 ###Once completed, clean up your environment###
 
 ###Stop Docker container
-"docker stop <container ID>"
+"docker stop container-id"
 
 ##Delete all docker images
 "docker system prune -a"
